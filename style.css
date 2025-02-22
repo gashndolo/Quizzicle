@@ -19,3 +19,6 @@
 .correct {
     border: 1px solid green;
 }
+.not-attempted {
+    border: 1px solid grey;
+}
