@@ -69,13 +69,16 @@ function App() {
 
   const questionElements = questions.map((question, index) => {
     return (
-      <Question 
-        key={index}
-        questKey={index}
-        checkingAnswers={checkingAnswers}
-        questionObj={question}
-        addToAllAnswered={addToAllAnswered}
-      />
+      <div>
+        <Question 
+          key={index}
+          questKey={index}
+          checkingAnswers={checkingAnswers}
+          questionObj={question}
+          addToAllAnswered={addToAllAnswered}
+        />
+        <hr />
+      </div>
     )
   })
 
@@ -90,16 +93,17 @@ function App() {
   }
 
   const renderButton = 
-    checkingAnswers ? <button onClick={startNewGame}>New Game</button> : 
-    loading ? null : error ? null : <button onClick={checkAnswers}>Check answers</button>
+    checkingAnswers ? <button onClick={startNewGame} className="submit">New Game</button> : 
+    loading ? null : error ? null : <button onClick={checkAnswers} className="submit">Check answers</button>
 
   return (
-    <>
-      <h1>Quizical</h1>
-      {error ? `Open trivia DB API call limited to once every five seconds...Reload page ${reloadCounter ==  0 ? 'now' : `in ${reloadCounter} seconds`}` : loading ? "Loading..." : questionElements}
+    <div className='container'>
+      <h1>Let's get Quizical</h1>
+      {error ? `Open trivia DB API call limited to once every five seconds...Reload page ${reloadCounter ==  0 ? 'now' : 
+        `in ${reloadCounter} seconds`}` : loading ? "Loading..." : questionElements}
       {renderButton
       }
-    </>
+    </div>
   )
 }
 

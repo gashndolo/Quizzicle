@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import Answer from "./Answer"
 import clsx from "clsx"
+import { decode } from "html-entities"
 /*
 export default function Question({questionObj, checkingAnswers}) {
     const [selectedAnswer, setSelectedAnswer] = useState({})
@@ -79,9 +80,11 @@ export default function Question({questionObj, checkingAnswers, addToAllAnswered
 
     const attempted = checkingAnswers && !answered
     return (
-        <div className={clsx(attempted && 'not-attempted')}>
-            <p>{questionObj.question}</p>
-            {answerElements}
+        <div className={clsx('question', attempted && 'not-attempted')}>
+            <h3>{decode(questionObj.question)}</h3>
+            <div className="answers">
+                {answerElements}
+            </div>
         </div>
     )
 }
