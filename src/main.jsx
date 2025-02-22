@@ -2,24 +2,6 @@ import { StrictMode, useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import Question from './Question'
 
-/*
-function App() {
-  const [checkingAnswers, setCheckingAnswers] = useState(false)
-  return (
-    <>
-
-      <h1>Quizical</h1>
-      <Question questionObj="Who was the guy who did the thing" checkingAnswers={checkingAnswers}/>
-      <hr />
-      <Question questionObj="Who was the guy who did the thing" checkingAnswers={checkingAnswers}/>
-      <hr />
-      <button onClick={() => setCheckingAnswers(true)}>Check answers</button>
-    </>
-  )
-}*/
-
-
-
 function App() {
   const [allAnswered, setAllAnswered] = useState([])
   const [checkingAnswers, setCheckingAnswers] = useState(false)
