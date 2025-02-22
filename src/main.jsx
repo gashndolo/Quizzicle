@@ -1,30 +1,19 @@
 import { StrictMode, useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import Question from './Question'
 
 
 function App() {
-  const [allAnswered, setAllAnswered] = useState(false)
-
-  
-
-  function newGame() {
-    useEffect(() => {
-      fetch("https://opentdb.com/api.php?amount=5")
-        .then(res => res.json())
-        .then(data => console.log(data))
-    }, [])
-  }
-  
-  function renderQuestions(questionsArray) {
-
-  }
+  const [checkingAnswers, setCheckAnswers] = useState(true)
   return (
     <>
-      <h1>Quizzical</h1>
+
+      <h1>Quizical</h1>
+      <Question questionObj="Who was the guy who did the thing" checkingAnswers={checkingAnswers}/>
     </>
   )
 }
 
 createRoot(document.getElementById('root')).render(
-    <App />,
+  <App />,
 )

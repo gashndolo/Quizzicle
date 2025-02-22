@@ -1,0 +1,21 @@
+
+
+.choices {
+    display: flex;
+    column-gap: 20px;
+}
+
+.choice {
+    border: 1px solid blue;
+}
+
+.selected {
+    border: 1px solid orange;
+}
+
+.wrong {
+    border: 1px solid red;
+}
+.correct {
+    border: 1px solid green;
+}
