@@ -36,7 +36,7 @@ export default function Question({questionObj, checkingAnswers, addToAllAnswered
                 checkingAnswers={checkingAnswers} 
                 correctAnswer={correctAnswer}
             >
-                {answer}
+                {decode(answer)}
             </Answer>
         )
     })
